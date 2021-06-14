@@ -1,49 +1,34 @@
-const testOverrides = require("./tests.js");
+/* eslint-env es6 */
+const testOverrides = require('./tests.js');
 
 module.exports = {
   root: true,
-
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'import', 'jest', 'promise', 'sonarjs', 'no-use-extend-native'],
   extends: [
-    "eslint-config-airbnb-base/rules/best-practices",
-    "eslint-config-airbnb-base/rules/errors",
-    "eslint-config-airbnb-base/rules/node",
-    "eslint-config-airbnb-base/rules/style",
-    "eslint-config-airbnb-base/rules/variables",
-    "eslint-config-airbnb-base/rules/es6",
-  ]
-    .map(require.resolve)
-    .concat([
-      // This disables all stylistic rules from the above.
-      "prettier",
-    ]),
-
-  env: {
-    browser: true,
-  },
-
-  plugins: ["prettier", "import"],
-
+    'eslint:recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
+    'plugin:jest/recommended',
+    'plugin:no-use-extend-native/recommended',
+    'plugin:prettier/recommended',
+    'plugin:promise/recommended',
+    'plugin:sonarjs/recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   rules: {
-    "prettier/prettier": "error",
-
-    "import/no-extraneous-dependencies": [
-      "error",
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-explicit-any': 'off',
+    //TODO: fix all errors in the code to enable default
+    'sonarjs/cognitive-complexity': ['error', 44],
+    'import/no-extraneous-dependencies': [
+      'error',
       {
         devDependencies: false,
       },
     ],
-
-    "one-var": "off",
-    "one-var-declaration-per-line": "off",
-    "prefer-arrow-callback": "off",
-    strict: "off",
-    "no-use-before-define": ["off", { functions: false }],
-    "no-underscore-dangle": "off",
-    "no-plusplus": "off",
-
-    // Enforce curly braces even for one liners.
-    curly: ["error", "all"],
   },
-
+  ignorePatterns: ['**/dist/**'],
   overrides: [testOverrides],
 };

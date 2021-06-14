@@ -12,9 +12,9 @@ yarn link
 
 cd /tmp
 rm -rf "$PROJECT"
-git clone https://github.com/NiGhTTraX/"$PROJECT".git || echo Repo already exists
+git clone https://github.com/epaypool/"$PROJECT".git || echo Repo already exists
 cd "$PROJECT"
 
 yarn install
-yarn link @nighttrax/eslint-config-"$CONFIG"
+yarn link @epaypool/eslint-config-"$CONFIG"
 yarn run lint

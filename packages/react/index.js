@@ -1,42 +1,25 @@
 module.exports = {
-  extends: ["eslint-config-airbnb/rules/react"]
-    .map(require.resolve)
-    .concat(["plugin:react-hooks/recommended"]),
-
-  rules: {
-    // Prefer types.
-    "react/prop-types": "off",
-    // Prefer default arguments.
-    "react/require-default-props": "off",
-
-    "react/destructuring-assignment": "off",
-    "react/jsx-filename-extension": ["error", { extensions: [".tsx", ".jsx"] }],
-    "react/prefer-stateless-function": "off",
-    "react/jsx-no-bind": "off",
-    "react/sort-comp": [
-      "error",
-      {
-        order: [
-          "displayName",
-          "statics",
-          "static-methods",
-          "defaultProps",
-          "state",
-          "constructor",
-          "render",
-          "/^(_)?render.+$/", // any auxiliary render methods
-          "componentWillMount",
-          "componentDidMount",
-          "componentWillReceiveProps",
-          "shouldComponentUpdate",
-          "componentWillUpdate",
-          "componentDidUpdate",
-          "componentWillUnmount",
-          "/^on[A-Z].+$/", // event handlers
-          "everything-else",
-          "/^_.+$/", // private methods
-        ],
+  env: {
+    browser: true,
+  },
+  parser: '@typescript-eslint/parser',
+  plugins: ['react', 'jsx-a11y'],
+  extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:jsx-a11y/recommended'],
+  globals: {
+    process: true,
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.tsx', '.ts'],
       },
-    ],
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
+  },
+  rules: {
+    'react/prop-types': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.tsx'], allow: 'as-needed' }],
   },
 };

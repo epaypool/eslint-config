@@ -1,29 +1,37 @@
 {
-  "name": "@nighttrax/eslint-config-base",
-  "version": "7.1.1",
+  "name": "@epaypool/eslint-config-base",
+  "version": "1.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "NiGhTTraX's ESLint base config",
+  "description": "epaypool ESLint base config",
   "keywords": [
     "eslint",
     "config"
   ],
-  "author": "Andrei Picus <NiGhTTraX@users.noreply.github.com>",
+  "author": "Epaypool Admin <info@epaypool.com>",
   "license": "MIT",
-  "main": "",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NiGhTTraX/eslint-config.git"
+    "url": "git+https://github.com/epaypool/eslint-config.git"
   },
-  "dependencies": {
-    "eslint-config-airbnb-base": "~14.2.1",
+  "devDependencies": {
+    "@typescript-eslint/parser": "~4.26.1",
     "eslint-config-prettier": "~8.3.0",
-    "eslint-plugin-import": "~2.23.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "~2.4.0",
+    "eslint-plugin-import": "~2.23.4",
+    "eslint-plugin-jest": "~24.3.6",
+    "eslint-plugin-no-use-extend-native": "^0.5.0",
     "eslint-plugin-prettier": "~3.4.0",
-    "prettier": "~2.3.0"
+    "eslint-plugin-promise": "~5.1.0",
+    "eslint-plugin-sonarjs": "~0.7.0",
+    "prettier-plugin-organize-imports": "~2.1.0"
   },
   "peerDependencies": {
-    "eslint": "^7.0.0"
+    "eslint": "~7.28.0",
+    "typescript": "~4.3.2",
+    "prettier": "~2.3.1"
   }
 }
