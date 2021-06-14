@@ -1,6 +1,6 @@
 {
   "name": "@epaypool/eslint-config-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publishConfig": {
     "access": "public"
   },
@@ -21,7 +21,7 @@
     "test": "../../test.sh mugshot ts"
   },
   "dependencies": {
-    "@epaypool/eslint-config-base": "^1.0.1",
+    "@epaypool/eslint-config-base": "^1.0.2",
     "@typescript-eslint/eslint-plugin": "~4.26.1"
   },
   "peerDependencies": {

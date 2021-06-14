@@ -1,6 +1,6 @@
 {
   "name": "@epaypool/eslint-config-tsx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publishConfig": {
     "access": "public"
   },
@@ -22,8 +22,8 @@
     "test": "../../test.sh tdd-buffet tsx"
   },
   "dependencies": {
-    "@epaypool/eslint-config-base": "^1.0.1",
-    "@epaypool/eslint-config-react": "^1.0.1"
+    "@epaypool/eslint-config-base": "^1.0.2",
+    "@epaypool/eslint-config-react": "^1.0.2"
   },
   "peerDependencies": {
     "eslint": "^7.28.0"
